@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <p className="titre">Modification par Sylvain Schwartzmann</p>
+        <p className="titre">Modification par Lémasyam</p>
       </header>
     </div>
   );

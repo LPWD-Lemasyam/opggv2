@@ -15,7 +15,7 @@ function Blog({ posts }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Carbo%20IRL?api_key=RGAPI-5b4edcbd-d17d-4abb-bbb0-67d8fb6979f9')
+  const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Carbo%20IRL?api_key=RGAPI-ae6bbd8f-1fb6-4047-97fb-49ad70059891')
   const posts = await res.json()
   console.log(posts);
 

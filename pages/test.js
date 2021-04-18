@@ -28,10 +28,10 @@ export default function Test({ posts,postsi }) {
     // You can use any data fetching library
     const id = query.id
  
-    const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+id+'?api_key=RGAPI-2dcbf0d1-6d6b-440b-bf35-c51172f5fec1')
+    const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+id+'?api_key=RGAPI-ae6bbd8f-1fb6-4047-97fb-49ad70059891')
     const posts = await res.json()
 
-    const resi = await fetch('https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+posts.id+'?api_key=RGAPI-2dcbf0d1-6d6b-440b-bf35-c51172f5fec1')
+    const resi = await fetch('https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+posts.id+'?api_key=RGAPI-ae6bbd8f-1fb6-4047-97fb-49ad70059891')
     const postsi = await resi.json()
   
     // By returning { props: { posts } }, the Blog component

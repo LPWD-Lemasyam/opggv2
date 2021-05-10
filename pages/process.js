@@ -3,18 +3,26 @@ import champion from './champion.json';
 const customData = require('./champion.json');
 export default function Test({ posts,postsi }) {
   // var posts = getServerSideProps();
- var nomChampionUn ="";
- var imageChampionUn ="";
+ var mon_array = new Array();
+ var full_data = new Array();
+ var retour = "";
+
 
  var tableau = Object.values(champion.data)
+ console.log(postsi);
 tableau.forEach(element => {
-  console.log(element);
-  if(element.key == postsi[0].championId){
-     nomChampionUn = element.name;
-     imageChampionUn = element.id;
+  for(var i = 0; i<3; i++){
+    console.log(postsi[i].championId);
+    if(element.key == postsi[i].championId){
+      mon_array["nom"] = element.name;
+      mon_array["id"] = element.id;
+      mon_array["point"] = postsi[i].championPoints;
+      full_data.push(mon_array);
+      mon_array = new Array();
+    }
   }
 });    
-console.log(nomChampionUn);
+
 return (
       <div>
           <ul>
@@ -23,8 +31,18 @@ return (
         </ul>
         <ul>
           <li>Les meilleurs champions de {posts.name}</li>
-          <li>{nomChampionUn} avec {postsi[0].championPoints} points</li>
-          <img width="500px" src={"splash/"+imageChampionUn+"_0.jpg"}></img>
+          {full_data.forEach(element=>{
+            retour = <li>{element.nom} avec {element.point} points</li>;
+          })}
+          {console.log(retour)}
+          <li>{full_data[0].nom} avec {full_data[0].point} points</li>
+          <img width="500px" src={"splash/"+full_data[0].id+"_0.jpg"}></img>
+
+          <li>{full_data[1].nom} avec {full_data[1].point} points</li>
+          <img width="500px" src={"splash/"+full_data[1].id+"_0.jpg"}></img>
+
+          <li>{full_data[2].nom} avec {full_data[2].point} points</li>
+          <img width="500px" src={"splash/"+full_data[2].id+"_0.jpg"}></img>
          
         </ul>
       </div>

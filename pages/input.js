@@ -2,7 +2,9 @@ import Link from 'next/link'
 function Input() {
   function redirection(){
     var val = document.querySelector("input").value;
-    document.location.href="https://opggv2.netlify.app/test?id="+val; 
+    document.location.href="http://localhost:3000/process?id="+val; 
+
+    
   }
     return (
     //   <Link

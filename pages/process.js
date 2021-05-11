@@ -1,3 +1,4 @@
+
 // posts will be populated at build time by getStaticProps()
 import champion from './champion.json';
 const customData = require('./champion.json');

@@ -21,7 +21,8 @@ tableau.forEach(element => {
     }
   }
 }); 
-console.log(full_data)   
+console.log(full_data)
+//Tri par points
 full_data.sort(function (a, b) {
   return b.point - a.point;
 });

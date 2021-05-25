@@ -24,6 +24,8 @@ export default function Test({ posts,postsi }) {
     full_data.sort(function (a, b) {
       return b.point - a.point;
     });
+
+
     return (
       <div>
           <ul>
@@ -51,7 +53,7 @@ export default function Test({ posts,postsi }) {
     )
   } catch(ex){
     useEffect(()=>{
-      router.push('/input?err=1');
+      router.push('/input?err=1&id='+posts.name);
     })
     return null;
   }
@@ -65,11 +67,10 @@ export default function Test({ posts,postsi }) {
     // Call an external API endpoint to get posts.
     // You can use any data fetching library
     const id = query.id
- 
-    const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+id+'?api_key=RGAPI-f3aad85f-b11c-4427-ad84-1314d376b541')
+    const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+id+'?api_key=RGAPI-a75feea4-972a-43cf-8248-38ea267527a7')
     const posts = await res.json()
 
-    const resi = await fetch('https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+posts.id+'?api_key=RGAPI-f3aad85f-b11c-4427-ad84-1314d376b541')
+    const resi = await fetch('https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+posts.id+'?api_key=RGAPI-a75feea4-972a-43cf-8248-38ea267527a7')
     const postsi = await resi.json()
   
     // By returning { props: { posts } }, the Blog component

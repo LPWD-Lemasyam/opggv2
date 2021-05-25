@@ -66,7 +66,7 @@ export default function Test({ posts,postsi }) {
   export async function getServerSideProps({ query }) {
     // Call an external API endpoint to get posts.
     // You can use any data fetching library
-    const id = query.id
+    const id = encodeURI(query.id)
     const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+id+'?api_key=RGAPI-a75feea4-972a-43cf-8248-38ea267527a7')
     const posts = await res.json()
 

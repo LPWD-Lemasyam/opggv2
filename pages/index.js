@@ -1,13 +1,21 @@
+import Connexion from './connexion'
+
+
 // posts will be populated at build time by getStaticProps()
 function Blog({ posts }) {
   console.log(posts);
+  
   return (
-    <ul>
-      <li>{posts.name}</li>
-      <li>{posts.summonerLevel}</li>
-    </ul>
+    <div>
+      <Connexion/>
+    </div>
+    
+
+
   )
 }
+
+
 
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do
@@ -15,7 +23,7 @@ function Blog({ posts }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Carbo%20IRL?api_key=RGAPI-ae6bbd8f-1fb6-4047-97fb-49ad70059891')
+  const res = await fetch('https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Carbo%20IRL?api_key=RGAPI-3b710eae-5c5c-49a5-8163-6020a19175fa')
   const posts = await res.json()
   console.log(posts);
 

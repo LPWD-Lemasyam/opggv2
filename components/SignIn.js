@@ -1,5 +1,4 @@
 import React from 'React'
-import LogButtons from './logButtons'
 
 function LoginButton(props) {
     return (

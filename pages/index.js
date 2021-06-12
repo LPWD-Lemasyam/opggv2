@@ -1,4 +1,5 @@
 import Connexion from './connexion'
+import Input from './input'
 
 
 // posts will be populated at build time by getStaticProps()
@@ -8,6 +9,8 @@ function Blog({ posts }) {
   return (
     <div>
       <Connexion/>
+      <a href="./input">Rechercher votre profil</a>
+
     </div>
     
 

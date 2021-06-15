@@ -1,6 +1,6 @@
 import Connexion from './connexion'
 import Input from './input'
-import React from 'react'
+import React from 'React'
 
 
 // posts will be populated at build time by getStaticProps()

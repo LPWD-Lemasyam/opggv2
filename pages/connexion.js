@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'React'
 import Head from 'next/head'
 import SignIn from '../components/SignIn'
 
